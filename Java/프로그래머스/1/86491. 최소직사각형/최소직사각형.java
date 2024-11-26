@@ -14,7 +14,7 @@ class Solution {
             }
 
             for(int h=0; h<sizes[w].length; h++) {               
-                if (sizes[w][h]>=max) {
+                if (sizes[w][h]>max) {
                     max = sizes[w][h];
                 }      
             }
