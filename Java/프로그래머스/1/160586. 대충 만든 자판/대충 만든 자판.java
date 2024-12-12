@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 class Solution {
     public int[] solution(String[] keymap, String[] targets) {
@@ -7,10 +6,11 @@ class Solution {
         
         Map<Character, Integer> map = new HashMap<>();
         
-        for(String s : keymap){
-            for(int i=0; i<s.length(); i++){
-                char key = s.charAt(i);
-                map.put(key, Math.min(i+1, map.getOrDefault(key, Integer.MAX_VALUE)));
+        for(int i=0; i<keymap.length; i++){
+            String s = keymap[i];
+            for(int j=0; j<s.length(); j++){
+                char key = s.charAt(j);
+                map.put(key, Math.min(j+1, map.getOrDefault(key, j+1)));
             }
         }
         
