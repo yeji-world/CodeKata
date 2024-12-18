@@ -4,8 +4,8 @@ class Solution {
 
         answer[0] = wallpaper.length;
         answer[1] = wallpaper[0].length();
-        answer[2] = -1;
-        answer[3] = -1;
+        answer[2] = 0;
+        answer[3] = 0;
 
         for (int i = 0; i < wallpaper.length; i++) {
             for (int j = 0; j < wallpaper[i].length(); j++) {
