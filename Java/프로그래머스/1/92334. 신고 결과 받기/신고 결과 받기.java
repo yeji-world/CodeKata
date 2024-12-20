@@ -6,11 +6,11 @@ public class Solution {
         int[] result = new int[id_list.length];    
 
         Map<String, Set<String>> reportMap = new HashMap<>();        
-        Map<String, Integer> reportedCount = new HashMap<>();
+        Map<String, Integer> countReported = new HashMap<>();
         
         for (String id : id_list) {
             reportMap.put(id, new HashSet<>());
-            reportedCount.put(id, 0);
+            countReported.put(id, 0);
         }
 
         for (String r : report) {
@@ -23,13 +23,13 @@ public class Solution {
 
         for (String reporter : reportMap.keySet()) {
             for (String reported : reportMap.get(reporter)) {
-                reportedCount.put(reported, reportedCount.get(reported) + 1);
+                countReported.put(reported, countReported.get(reported)+1);
             }
         }
 
         for (String reporter : reportMap.keySet()) {
             for (String reported : reportMap.get(reporter)) {
-                if (reportedCount.get(reported) >= k) {
+                if (countReported.get(reported) >= k) {
                     result[Arrays.asList(id_list).indexOf(reporter)]++;
                 }
             }
