@@ -1,0 +1,4 @@
+-- 코드를 입력하세요
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(A.DATETIME, '%Y-%m-%d') as '날짜'
+FROM ANIMAL_INS A
+ORDER BY 1
